@@ -2,23 +2,23 @@ import {PageProps} from "@/types";
 import Layout from "@/Pages/Guarded/Settings/Layout";
 import {Head} from "@inertiajs/react";
 import {Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbSeparator} from "@/Components/ui/breadcrumb";
-import {Button} from "@/Components/ui/button";
 import {Table, TableBody, TableCell, TableHeader, TableRow} from "@/Components/ui/table";
+import NewStatusTypeModal from "@/Pages/Guarded/Settings/StatusType/Partials/NewStatusTypeModal";
 
-export default function Settings({}: PageProps) {
+export default function StatusType({}: PageProps) {
     return (
-        <Layout current={'general'}>
-            <Head title={'General Settings'}/>
+        <Layout current={'status-type'}>
+            <Head title={'Status Type'}/>
             <div className={""}>
                 <Breadcrumb>
                     <BreadcrumbList>
                         <BreadcrumbItem>Settings</BreadcrumbItem>
                         <BreadcrumbSeparator/>
-                        <BreadcrumbItem>General</BreadcrumbItem>
+                        <BreadcrumbItem>Status Type</BreadcrumbItem>
                     </BreadcrumbList>
                 </Breadcrumb>
                 <div className={""}>
-                    <Button size={"sm"} className={"float-end"}>New</Button>
+                    <NewStatusTypeModal />
                     <Table className={"my-2"}>
                         <TableHeader>
                             <TableRow>

@@ -2,8 +2,8 @@ import {Link} from "@inertiajs/react";
 import {cn} from "@/lib/utils";
 
 export const settingsMenus = [
-    {name: "general", title: "General", route: "#"},
-    {name: "status-type", title: "Status Type", route: "#"},
+    {name: "general", title: "General", route: route("settings.index")},
+    {name: "status-type", title: "Status Type", route: route("status-type.index")},
     {name: "templates", title: "Templates", route: "#"},
 ];
 export default function SettingsMenu({current}: { current: string }) {
