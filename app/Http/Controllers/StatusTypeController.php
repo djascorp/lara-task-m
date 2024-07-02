@@ -14,13 +14,13 @@ class StatusTypeController extends Controller
 
     public function store(Request $request) {
 
-        $request->validate([
-            "type_name" => ["required","unique","string"]
+        $validated = $request->validate([
+            "type_name" => "required|unique:status_types,type_name|string"
         ]);
 
-//        StatusType::create([
-//
-//        ]);
+        $validated["user_id"] = auth()->user()->id;
+
+        StatusType::create($validated);
 
         return back()->with([
             "message" => "Saved Successfully"
